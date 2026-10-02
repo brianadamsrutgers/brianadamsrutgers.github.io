@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brian Adams | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background-color: #1d3557;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #a8dadc;
+        }
+
+
+        /* HERO */
+
+        header {
+            background-color: #1d3557;
+            color: white;
+            padding: 70px 10% 85px;
+        }
+
+        .hero {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .headshot {
+            width: 285px;
+            height: 285px;
+            object-fit: cover;
+            object-position: center 20%;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            flex-shrink: 0;
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            margin-bottom: 3px;
+        }
+
+        .hero-text h3 {
+            font-size: 21px;
+            font-weight: normal;
+            color: #dce8f5;
+            margin-bottom: 25px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+
+        /* GENERAL */
+
+        section {
+            max-width: 1050px;
+            margin: auto;
+            padding: 65px 25px;
+        }
+
+        section h2 {
+            color: #1d3557;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-card {
+            background-color: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+
+        /* ABOUT */
+
+        .about-text p {
+            margin-bottom: 18px;
+            font-size: 17px;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* CAREER INTERESTS */
+
+        .career-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .career-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .career-box h3 {
+            color: #1d3557;
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+
+        /* SKILLS */
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            background-color: white;
+            padding: 14px 22px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-weight: bold;
+        }
+
+
+        /* PROJECTS */
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .project {
+            background-color: white;
+            padding: 32px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+            border-top: 5px solid #1d3557;
+        }
+
+        .project h3 {
+            color: #1d3557;
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .project h4 {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 18px;
+            font-weight: normal;
+        }
+
+        .project p {
+            margin-bottom: 15px;
+        }
+
+        .project p:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-result {
+            font-weight: bold;
+            color: #1d3557;
+        }
+
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin-bottom: 15px;
+        }
+
+        .contact a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 22px;
+            background-color: #1d3557;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .contact a:hover {
+            background-color: #457b9d;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: #1d3557;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav div {
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 6px;
+                font-size: 13px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .headshot {
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .projects-container,
+            .career-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <h2>Brian Adams</h2>
+
+    <div>
+        <a href="#about">About</a>
+        <a href="#interests">Interests</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
+
+
+
+<!-- HERO / PERSONAL STATEMENT -->
+
+<header>
+
+    <div class="hero">
+
+        <img src="brianheadshot.jpeg"
+             alt="Brian Adams"
+             class="headshot">
+
+        <div class="hero-text">
+
+            <h1>Brian Adams</h1>
+
+            <h3>Rutgers Business School | Supply Chain Management</h3>
+
+            <p>
+                I am a Business student at Rutgers University interested in FP&amp;A,
+                supply chain, business operations, and analytics who has gained and
+                harnessed hands-on experience through my education, work, and various
+                high-level college prep courses in tracking KPIs, finding drivers
+                behind results, and communicating what matters to a team.
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ABOUT ME -->
+
+<section id="about">
+
+    <h2>About Me</h2>
+
+    <div class="section-card about-text">
+
+        <p>
+            I am pursuing a Bachelor of Science in Supply Chain Management at
+            Rutgers Business School with an expected graduation date of May 2028.
+            I currently hold a 3.58 GPA and have earned Dean's List recognition
+            three times, in Spring 2025, Fall 2025, and Spring 2026.
+        </p>
+
+        <p>
+            My academic background includes coursework in Supply Chain Management,
+            Financial Accounting, Financial Management, and Statistical Methods
+            for Business, giving me exposure to both the operational and financial
+            sides of business decision-making.
+        </p>
+
+        <p>
+            Outside of the classroom, I am a member of BASE, the Rutgers Business
+            Association of Supply Chain Expertise, where I continue to expand my
+            exposure to the supply chain field and the professional opportunities
+            within it.
+        </p>
+
+        <p>
+            I have also completed the Walmart USA Area Manager job simulation
+            through Forage, where I worked through scenarios involving warehouse
+            operations, safety, staffing, equipment issues, and operational
+            decision-making.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- CAREER GOALS AND INTERESTS -->
+
+<section id="interests">
+
+    <h2>Career Goals & Interests</h2>
+
+    <div class="career-grid">
+
+        <div class="career-box">
+
+            <h3>Seeking</h3>
+
+            <p>
+                I am seeking opportunities in FP&amp;A, supply chain management,
+                business analytics, procurement, or partnerships where I can
+                contribute with initiative, attention to detail, and clear
+                communication.
+            </p>
+
+        </div>
+
+
+        <div class="career-box">
+
+            <h3>Professional Interests</h3>
+
+            <p>
+                My professional interests include FP&amp;A, financial reporting,
+                supply chain management, forecasting, business operations,
+                partnerships and activation measurement, logistics and inventory,
+                and procurement.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2>Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="skill">Supply Chain Management</div>
+
+        <div class="skill">Logistics</div>
+
+        <div class="skill">Inventory Management</div>
+
+        <div class="skill">Warehouse Operations</div>
+
+        <div class="skill">Shipping & Receiving</div>
+
+        <div class="skill">Order Processing</div>
+
+        <div class="skill">Business Process Improvement</div>
+
+        <div class="skill">Financial Accounting</div>
+
+        <div class="skill">Microsoft Excel</div>
+
+        <div class="skill">SQL</div>
+
+        <div class="skill">QuickBooks</div>
+
+        <div class="skill">Team Leadership</div>
+
+        <div class="skill">Task Delegation</div>
+
+        <div class="skill">Customer Service</div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="projects-container">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project">
+
+            <h3>Quality Control & Inventory Operations Project</h3>
+
+            <h4>IVB Media Services | Summer 2026</h4>
+
+            <p>
+                I implemented a quality control process through assembling and
+                preparing storage hardware solutions, including OWC RAID drive
+                enclosures, while ensuring products were properly prepared for
+                customers.
+            </p>
+
+            <p>
+                I coordinated product labeling using custom RFID labels, inventory
+                organization, and fulfillment workflows to maintain operational
+                efficiency throughout the order process.
+            </p>
+
+            <p>
+                The project was supported by my broader responsibilities involving
+                sales and purchase orders, shipping and receiving, inventory
+                tracking, QuickBooks documentation, deliveries, pickups, and
+                communication with customers and business partners.
+            </p>
+
+        </div>
+
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project">
+
+            <h3>Closing Process Improvement Project</h3>
+
+            <h4>Baskin-Robbins | Supervisor</h4>
+
+            <p>
+                I improved the store's closing process by organizing
+                responsibilities, delegating tasks more efficiently, and helping
+                team members complete their responsibilities in a timely manner.
+            </p>
+
+            <p class="project-result">
+                Through these improvements, I reduced total closing time by
+                approximately 50%.
+            </p>
+
+            <p>
+                This project built on my responsibilities as a supervisor, where
+                I directed employees throughout shifts, managed more than 30
+                delegated duties, trained approximately 5–10 employees, monitored
+                inventory, handled customer issues, and processed more than 100
+                transactions per shift.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2>Contact</h2>
+
+    <div class="contact">
+
+        <p>
+            I am always interested in connecting with professionals and learning
+            about opportunities in finance, supply chain, analytics, and business
+            operations.
+        </p>
+
+        <a href="mailto:bna40@scarletmail.rutgers.edu">
+            Email Me
+        </a>
+
+        <a href="https://www.linkedin.com/in/brian-adams-6967ab372"
+           target="_blank">
+            LinkedIn
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>&copy; 2026 Brian Adams | Personal Portfolio</p>
+
+</footer>
+
+
+</body>
+
+</html>
